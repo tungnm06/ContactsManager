@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="ManageContacts.SearchContact"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ManageContacts"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.TopAppBar>
+        
+        <AppBar>
+            <CommandBar>
+                <AppBarButton x:ConnectionId='1' x:Name="btnNewContact" Width="100" Icon="NewWindow" Label="New Contacts"                             />
+
+            </CommandBar>
+        </AppBar>
+            
+    </Page.TopAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ListView x:ConnectionId='2' x:Name="lstFile" HorizontalAlignment="Left" Height="680" Margin="50,30,0,0" VerticalAlignment="Top" Width="203"                                            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <TextBox x:ConnectionId='3' HorizontalAlignment="Left" x:Name="txtSearch" Margin="379,116,0,0" Text="" Width="200" VerticalAlignment="Top"/>
+        <Button x:ConnectionId='4' Content="Search" x:Name="btnSearch" HorizontalAlignment="Left" Margin="615,116,0,0" VerticalAlignment="Top"                        />
+        <ListView x:ConnectionId='5' x:Name="lstFile2" HorizontalAlignment="Left" Height="328" Margin="379,220,0,0" VerticalAlignment="Top" Width="170"                                             >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <Button x:ConnectionId='6' Content="Refresh" x:Name="btnRefresh" HorizontalAlignment="Left" Margin="700,116,0,0" VerticalAlignment="Top"                         />
+    </Grid>
+</Page>
+
